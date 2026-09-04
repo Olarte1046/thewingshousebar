@@ -1,106 +1,87 @@
 import React from 'react';
-import { ShieldCheck, MapPin, Clock, ArrowRight, Utensils, Star, MessageCircle } from 'lucide-react';
+import { ShieldCheck, MessageCircle, Flame } from 'lucide-react';
 import { RESTAURANT_INFO } from '../data/menuData';
 
 export const Hero: React.FC = () => {
   const handleQuickWhatsApp = () => {
-    const defaultMsg = encodeURIComponent("¡Hola! Quisiera consultar el menú y hacer un pedido en The Wing's House 🍗🔥");
+    const defaultMsg = encodeURIComponent("¡Hola The Wing's House! 🍗🔥 Quiero hacer un pedido directo.");
     window.open(`https://wa.me/${RESTAURANT_INFO.whatsappFormatted}?text=${defaultMsg}`, '_blank');
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-4">
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-24 px-4">
       {/* Background Image Overlay strictly using real facade photo */}
       <div className="absolute inset-0 z-0">
         <img 
           src="/images/restaurant/facade_night.jpg" 
-          alt="Fachada nocturna real de The Wing's House" 
-          className="w-full h-full object-cover object-center filter brightness-[0.3] contrast-125 scale-105"
+          alt="Fachada real de The Wing's House" 
+          className="w-full h-full object-cover object-center filter brightness-[0.25] contrast-125 scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#07080a] via-[#07080a]/75 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#07080a]/95 via-[#07080a]/40 to-[#07080a]/95" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#07080a] via-[#07080a]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#07080a]/95 via-[#07080a]/30 to-[#07080a]/95" />
       </div>
 
-      {/* Ambient background glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-amber-500/15 rounded-full filter blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-red-600/10 rounded-full filter blur-[100px] pointer-events-none" />
+      {/* Ambient glowing spots */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-red-600/20 rounded-full filter blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-amber-500/20 rounded-full filter blur-[120px] pointer-events-none" />
 
-      {/* Hero Content */}
+      {/* Hero Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
         
-        {/* Authentic Guarantee Pill */}
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm font-extrabold mb-8 backdrop-blur-xl shadow-lg shadow-emerald-500/10 animate-pulse">
+        {/* Quality Banner Pill */}
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs sm:text-sm font-black mb-8 backdrop-blur-xl shadow-lg shadow-emerald-500/10">
           <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>FOTOGRAFÍA 100% REAL — SIN IA NI IMÁGENES FALSAS</span>
+          <span>FOTOGRAFÍA 100% REAL DEL LOCAL Y NUESTRAS RECETAS</span>
         </div>
 
-        <h1 className="text-4xl sm:text-7xl md:text-8xl font-black tracking-tight text-white uppercase mb-6 leading-[0.95] drop-shadow-2xl">
-          SABOR AUTÉNTICO & <br />
+        {/* High Conversion Headline */}
+        <h1 className="text-4xl sm:text-7xl md:text-8xl font-black tracking-tight text-white uppercase mb-6 leading-[0.92] drop-shadow-2xl">
+          LAS MEJORES ALITAS DE LA CIUDAD <br />
           <span className="text-gradient-fire">
-            ALITAS EXTRAORDINARIAS
+            DIRECTO A TU PUERTA 🍗🔥
           </span>
         </h1>
 
         <p className="max-w-2xl text-gray-200 text-base sm:text-xl mb-10 font-medium leading-relaxed drop-shadow-md">
-          Alitas crujientes en salsas artesanales, hamburguesas jugosas, costillas ahumadas y cervezas heladas. Disfruta la verdadera experiencia del bar o recíbelo en casa por WhatsApp.
+          Disfruta nuestras crujientes alitas con salsas artesanales, hamburguesas jugosas y costillas ahumadas BBQ. Pedido rápido sin intermediarios.
         </p>
 
-        {/* Action Buttons */}
+        {/* BRUTAL CONVERSION CTA BUTTONS */}
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           
-          {/* Main Menu Button */}
-          <a 
-            href="#menu" 
-            className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-lg transition-all shadow-xl shadow-amber-500/25 hover:scale-105 hover:shadow-amber-500/40 cursor-pointer"
-          >
-            <Utensils className="w-5 h-5 stroke-[2.5]" />
-            Explorar Menú & Pedir
-          </a>
-
-          {/* Quick WhatsApp Order Button */}
+          {/* Main WhatsApp CTA */}
           <button 
             onClick={handleQuickWhatsApp}
-            className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-8 py-4.5 rounded-2xl bg-emerald-600/90 hover:bg-emerald-500 text-slate-950 font-black text-lg transition-all shadow-xl shadow-emerald-600/25 hover:scale-105 cursor-pointer"
+            className="w-full sm:w-auto flex items-center justify-center gap-3 px-9 py-5 rounded-2xl bg-gradient-to-r from-emerald-500 via-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-slate-950 font-black text-xl transition-all shadow-2xl shadow-emerald-500/30 hover:scale-105 hover:shadow-emerald-500/50 cursor-pointer border border-emerald-300/40"
           >
-            <MessageCircle className="w-5 h-5 stroke-[2.5]" />
-            Pedido Rápido por WhatsApp
+            <MessageCircle className="w-6 h-6 fill-slate-950/20 stroke-[2.5]" />
+            🛵 PEDIR AHORA POR WHATSAPP
           </button>
 
-          {/* Gallery button */}
+          {/* Quick Menu Exploration Button */}
           <a 
-            href="#fotos-reales" 
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-4.5 rounded-2xl bg-slate-900/80 hover:bg-slate-800 border border-white/20 text-white font-bold text-base backdrop-blur-md transition-all hover:scale-105"
+            href="#menu" 
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-lg transition-all shadow-xl shadow-amber-500/25 hover:scale-105 cursor-pointer"
           >
-            Ver Fotos Reales
-            <ArrowRight className="w-4 h-4" />
+            <Flame className="w-5 h-5 fill-slate-950 stroke-none" />
+            Ver Menú Estático
           </a>
 
         </div>
 
-        {/* Quick Highlights Banner */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 pt-8 border-t border-white/10 w-full max-w-4xl text-gray-300 text-xs sm:text-sm">
-          <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/50 border border-white/5 backdrop-blur-md">
-            <Clock className="w-5 h-5 text-amber-500 mb-1" />
-            <span className="font-extrabold text-white">4:00 PM - 11:30 PM</span>
-            <span className="text-[11px] text-gray-400">Atención Diaria</span>
+        {/* Visual Trust Features */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-16 pt-8 border-t border-white/10 w-full max-w-3xl text-gray-300 text-xs sm:text-sm">
+          <div className="flex items-center justify-center gap-2 font-bold">
+            <span className="text-amber-400 text-lg">🚀</span>
+            <span>Entrega Rápida en Casa</span>
           </div>
-
-          <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/50 border border-white/5 backdrop-blur-md">
-            <MessageCircle className="w-5 h-5 text-emerald-400 mb-1" />
-            <span className="font-extrabold text-white">Pedidos por WhatsApp</span>
-            <span className="text-[11px] text-gray-400">Directo sin Comisiones</span>
+          <div className="flex items-center justify-center gap-2 font-bold">
+            <span className="text-emerald-400 text-lg">💬</span>
+            <span>Sin Comisiones de Apps</span>
           </div>
-
-          <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/50 border border-white/5 backdrop-blur-md">
-            <Star className="w-5 h-5 text-amber-500 mb-1 fill-amber-500 stroke-none" />
-            <span className="font-extrabold text-white">Alitas & Costillas BBQ</span>
-            <span className="text-[11px] text-gray-400">Receta de la Casa</span>
-          </div>
-
-          <div className="flex flex-col items-center justify-center p-3 rounded-xl bg-slate-900/50 border border-white/5 backdrop-blur-md">
-            <MapPin className="w-5 h-5 text-amber-500 mb-1" />
-            <span className="font-extrabold text-white">Excelente Ambiente</span>
-            <span className="text-[11px] text-gray-400">Terraza & Deportes</span>
+          <div className="col-span-2 md:col-span-1 flex items-center justify-center gap-2 font-bold">
+            <span className="text-red-400 text-lg">🔥</span>
+            <span>Salsas 100% Caseras</span>
           </div>
         </div>
 
