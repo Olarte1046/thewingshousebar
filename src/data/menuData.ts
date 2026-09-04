@@ -207,10 +207,10 @@ export const MENU_ITEMS: MenuItem[] = [
 export const RESTAURANT_INFO = {
   name: "The Wing's House",
   tagline: "BURGER · RIBS · BEER",
-  phone: "+573000000000",
+  phone: "+57 300 000 0000",
   whatsappFormatted: "573000000000",
-  address: "Calle de las Alitas & Sabores, Colombia",
+  address: "La Floresta / La América, Medellín, Colombia",
   schedule: "Lunes a Domingo: 4:00 PM - 11:30 PM",
   facebookUrl: "https://www.facebook.com/thewingshousebar/?locale2=es_LA&_rdr",
-  googleMapsUrl: "https://maps.app.goo.gl/Zt5QJNtZs8ciD7dv5"
+  googleMapsUrl: "https://maps.app.goo.gl/37vfrYxTMzETue7EA"
 };
